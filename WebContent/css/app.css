@@ -1,0 +1,30 @@
+*, h1, h2, h3, h4,h5,h6,p,span,div{
+font-family: 'Open Sans', sans-serif;
+margin: 0px;
+padding: 0px;
+}
+
+.item{
+	width: auto;
+	margin: auto;
+	text-align: center;
+	margin-top: 3px;
+	background: #F2F2F2;
+	padding: 8px;
+	box-shadow: 0px 0px 3px #CCC;
+}
+
+.item.title{
+	font-size: 18px;
+	font-weight: bold;
+	color: #444;
+}
+
+.subtitle{
+	font-size: 14px;
+	color: #444;
+}
+.active{
+	background-color: #0080c0;
+	color:white;
+}

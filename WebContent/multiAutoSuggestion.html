@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html data-ng-app="multiAutoSuggestion">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Multiple Auto Complete</title>
+
+    <script>document.write('<base href="' + document.location + '" />');</script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="css/web.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/ng-tags-input.min.css" />
+  </head>
+  <body class="container" style="padding: 20px">
+    <section>
+		<div class="container" data-ng-controller="multiAutoSuggestionCtrl">
+			<div class="form-horizontal boundary">
+				<div class="row">
+					<!-- This controller for search field -->
+					<div class="col-md-6 col-md-offset-3" data-ng-controller="multiAutoSuggestionCtrl">
+						<!-- PAGE HEADER -->
+						<div id="header" class="page-header">
+						    <h4><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Search Here.</h4>
+						</div >
+						<form action="#" method="post">
+							<label class="col-sm-3 control-label" for="search">Search Multiple:</label>
+							<div class="form-group col-sm-9" style="padding-bottom: 40px">
+								<tags-input data-ng-model="tags" display-property="name" placeholder="Add a country" 
+									replace-spaces-with-dashes="false">
+	
+							      <auto-complete source="loadCountries($query)" min-length="3" load-on-focus="false" load-on-empty="false"
+							                     max-results-to-show="10" template="my-custom-template" >
+							      </auto-complete>
+							    </tags-input>
+							    <div data-ng-repeat="item in TagItem">
+							    	<input type="hidden" name="list[{{$index}}]" data-ng-value="item.id"/>
+							    </div>
+							    
+							    <button type="submit" class="btn btn-info btn-sm">Submit</button>
+							</div>
+						</form>
+					</div>
+					
+					<!-- This controller for editable search field -->
+					<div class="col-md-6 col-md-offset-3" data-ng-controller="editableMultiAutoSuggestionCtrl">
+						<form action="#" method="post">
+							<label class="col-sm-3 control-label" for="search">Editable Search:</label>
+							<div class="form-group col-sm-9" style="padding-bottom: 40px">
+								<tags-input data-ng-model="tags" display-property="name" placeholder="Add a country" 
+									replace-spaces-with-dashes="false">
+	
+							      <auto-complete source="loadCountries($query)" min-length="3" load-on-focus="false" load-on-empty="false"
+							                     max-results-to-show="10" template="my-custom-template" >
+							      </auto-complete>
+							    </tags-input>
+							    <div data-ng-repeat="item in TagItem">
+							    	<input type="hidden" name="list[{{$index}}]" data-ng-value="item.id"/>
+							    </div>
+							    
+							    <button type="submit" class="btn btn-info btn-sm">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <script src="AngularJS/angular.min.js"></script>
+    <script src="js/ng-tags-input.min.js"></script>
+    <script src="js/multiAutoSuggestion.js"></script>
+    
+    <!-- This controller for editable search field -->
+    <script type="text/javascript">
+    /* angular.module('multiAutoSuggestion', ['ngTagsInput']); */
+    angular.module('multiAutoSuggestion').controller('editableMultiAutoSuggestionCtrl', function($scope, $http) {
+	
+	      $scope.tags = [{"name": "Alabama", "id": "1"}, { "name": "Alaska", "id": "2" }];
+	
+	      $scope.loadCountries = function($query) {
+	        return $http.get('json/countries.json', { cache: true}).then(function(response) {
+	
+	          var countries = response.data;
+	          $scope.Total = countries;
+	
+	          return countries.filter(function(country) {
+	        	  
+	            return country.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+	            
+	          });
+	        });
+	      };
+	      
+	      $scope.TagItem = [];
+	      $scope.TagItem = $scope.tags;
+	
+	});
+    </script>
+    
+    <!-- This script for both field -->
+    <script type="text/ng-template" id="my-custom-template">
+      	<div class="left-panel">
+        	<!--<img ng-src="http://mbenford.github.io/ngTagsInput/images/flags/{{data.flag}}" />-->
+      	</div>
+
+      	<div class="right-panel">
+        	<span ng-bind-html="$highlight($getDisplayText())"></span>
+        	<!--<span>({{data.rank}})</span>
+        	<span>{{data.confederation}}</span>-->
+      	</div>
+    </script>
+  </body>
+</html>

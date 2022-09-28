@@ -1,0 +1,480 @@
+@CHARSET "ISO-8859-1";
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+@media (min-width: 300px;) {}
+
+body {
+	background-color: #f1f1f1;
+}
+
+/*Login*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(bootstrap/fonts/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(bootstrap/fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+.btns { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btns:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btns-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btns:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btns-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btns-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btns-primary { background-color: #2b58b4; background-image: -moz-linear-gradient(top, #5787eb, #2b58b4); background-image: -ms-linear-gradient(top, #5787eb, #2b58b4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5787eb), to(#2b58b4)); background-image: -webkit-linear-gradient(top, #5787eb, #2b58b4); background-image: -o-linear-gradient(top, #5787eb, #2b58b4); background-image: linear-gradient(top, #5787eb, #2b58b4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#5787eb, endColorstr=#2b58b4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btns-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #2b58b4; }
+.btns-block { width: 100%; display:block; }
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+.html { width: 100%; height:100%; overflow:hidden; }
+
+.body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #055ca5;
+	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(15,76,160,.4) 10%,rgba(15,76,160,,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #4491e9 0%, #0d4d95 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(15,76,160,.4) 10%,rgba(15,76,160,,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #4491e9 0%,#0d4d95 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(15,76,160,.4) 10%,rgba(15,76,160,,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #4491e9 0%,#0d4d95 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(15,76,160,.4) 10%,rgba(15,76,160,,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #4491e9 0%,#0d4d95 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(15,76,160,.4) 10%,rgba(15,76,160,,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #4491e9 0%,#0d4d95 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+}
+
+.login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+.login h4 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; font-family: "Perpetua Titling MT";}
+
+.inputlogin { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #ffffff !important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+.inputlogin:focus { box-shadow: inset 0 -5px 45px rgba(59, 131, 244, 0.49), 0 1px 1px rgba(255,255,255,0.2); }
+
+
+/*Div Style*/
+#header {
+	font-family: "Perpetua Titling MT";
+	text-align: center;
+	background-color: ;
+	color: #8a8a8a;
+    padding-left: 20px;
+}
+
+label {
+	color: #5a5a5a;
+	font-family: "Times New Roman";
+}
+		
+button {
+	text-color: #ffffff;
+}
+
+p {
+	color: #ffffff;
+}
+		
+th {
+	text-align: center;
+	/*border: 1px solid #0a6594;*/
+	border-collapse: collapse;
+}
+
+td {
+	font-family: "Times New Roman";
+	font-size: 14px;
+	padding: auto;
+}
+
+.boundary {
+	color:  ;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    background-color: #ffffff !important;
+}
+
+. { background-color: #012a46 !important; }
+
+.line {
+	padding-right: 20px;
+	margin-top: 0px;
+    margin-bottom: 20px;
+    border-width: 1px;
+    border-right-style: solid;
+    border-color: #c2d7ff;
+}
+
+.divstyle {
+	padding-left: 20px;
+}
+    
+.divtablestyle {
+	padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+.ui-datepicker th { 
+	background-color: white; 
+}
+
+/*List Table Style*/
+
+table.table {
+	clear: both;
+	margin-bottom: 6px !important;
+	max-width: none !important;
+}
+
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+	cursor: pointer;
+	*cursor: hand;
+}
+
+table.table thead .sorting { 
+	background: url('images/sort_both.png') no-repeat center right; 
+	z-index: 1;
+}
+table.table thead .sorting_asc { 
+	background: url('images/sort_asc.png') no-repeat center right; 
+	z-index: 1;
+}
+table.table thead .sorting_desc { 
+	background: url('images/sort_desc.png') no-repeat center right; 
+	z-index: 1;
+}
+
+table.table thead .sorting_asc_disabled { 
+	background: url('images/sort_asc_disabled.png') no-repeat center right; 
+	z-index: 1;
+}
+table.table thead .sorting_desc_disabled { 
+	background: url('images/sort_desc_disabled.png') no-repeat center right; 
+	z-index: 1;
+}
+
+.table tbody tr.active td,
+.table tbody tr.active th {
+	background-color: #08C;
+	color: white;
+}
+
+table#example {
+    table-layout:auto;
+}
+
+.table tbody tr.active:hover td,
+.table tbody tr.active:hover th {
+	background-color: #0075b0 !important;
+}
+
+.tablestyle tbody tr:nth-child(odd) td,
+.tablestyle tbody tr:nth-child(odd) th {
+	background-color: #dfdede;
+	opacity: 0.93;
+	filter: Alpha(opacity=93); /* IE8 and earlier */
+}
+
+.tablestyle tbody tr:nth-child(even) td,
+.tablestyle tbody tr:nth-child(even) th {
+	background-color: #cacacd;
+	opacity: 0.93;
+	filter: Alpha(opacity=93); /* IE8 and earlier */
+}
+
+.tablestyle colgroup col.selectedcolumn:nth-child(even) {
+	background-color: #006393;
+	color: #fff !important;
+}
+
+.tablestyle colgroup col.selectedcolumn:nth-child(odd) {
+	background-color: #006393;
+	color: #fff !important;
+}
+
+
+/*Drag Drop List*/
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+.typesDemo ul[data-dnd-list],
+.typesDemo ul[data-dnd-list] > li {
+	position: relative;
+    text-align: center;
+}
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.typesDemo ul[data-dnd-list] {
+    min-height: 5px;
+    padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+.typesDemo ul[data-dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+.typesDemo ul[data-dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 22px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+.typesDemo ul[data-dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    margin-bottom: -1px;
+    cursor: move;
+    
+    /* Disable text selection if item is not draggable */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Drop Down Menu*/
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #0057ae;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+p {
+	color: black;
+}
+
+#footer {
+  background-color: #033150;
+  height: 40px;
+}
+
+#footer p {
+  color:#efefef;
+}
+
+
+/*Custom Navigation Bar*/
+
+.navbar-custom {
+  background-color: #012a46;
+  border-color: #0b4e7b;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#0b4e7b), to(#012a46));
+  background-image: -webkit-linear-gradient(top, #0b4e7b, 0%, #012a46, 100%);
+  background-image: -moz-linear-gradient(top, #0b4e7b 0%, #012a46 100%);
+  background-image: linear-gradient(to bottom, #0b4e7b 0%, #012a46 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b4e7b', endColorstr='#012a46', GradientType=0);
+}
+.navbar-custom .navbar-brand {
+  color: #ffffff;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #e6e6e6;
+  background-color: transparent;
+}
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > li:last-child > a {
+  border-right: 0px solid #0072ab;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffff;
+  border-left: 0px solid #0072ab;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #c0c0c0;
+  background-color: transparent;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #c0c0c0;
+  background-color: #0072ab;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#0072ab), to(#0094de));
+  background-image: -webkit-linear-gradient(top, #0072ab, 0%, #0094de, 100%);
+  background-image: -moz-linear-gradient(top, #0072ab 0%, #0094de 100%);
+  background-image: linear-gradient(to bottom, #0072ab 0%, #0094de 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0072ab', endColorstr='#ff0094de', GradientType=0);
+}
+.navbar-custom .navbar-nav > .disabled > a,
+.navbar-custom .navbar-nav > .disabled > a:hover,
+.navbar-custom .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #004f75;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #e6e6e6;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #006291;
+}
+.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
+.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #c0c0c0;
+  border-bottom-color: #c0c0c0;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  background-color: #074f80;
+  color: #ffffff;
+}
+.navbar-custom .navbar-nav > .open > a .caret,
+.navbar-custom .navbar-nav > .open > a:hover .caret,
+.navbar-custom .navbar-nav > .open > a:focus .caret {
+  border-top-color: ;
+  border-bottom-color: #ffffff;
+}
+.navbar-custom .navbar-nav > .dropdown > a .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+@media (max-width: 767) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #054d7d;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+.navbar-custom .navbar-link {
+  color: #ffffff;
+}
+.navbar-custom .navbar-link:hover {
+  color: #ffffff;
+}

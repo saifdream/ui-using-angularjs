@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html data-ng-app="Timepicker">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>What Time is it?</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+</head>
+<body style="padding-top: 20px">
+	<section>
+		<div class="container" data-ng-controller="TimepickerDemoCtrl">
+			<div class="form-horizontal boundary">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<!-- PAGE HEADER -->
+						<div id="header" class="page-header">
+						    <h4><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Onus IT Solution</h4>
+						</div >
+						<form action="hello.html" method="post">
+							<div class="form-group col-sm-9" style="padding-bottom: 40px; padding-left: 50px">
+								<h4>Timepicker:</h4>
+								<div>
+									<pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+									<timepicker ng-model="mytime" data-ng-change="changed()" 
+										hour-step="hstep" minute-step="mstep" show-meridian="ismeridian">
+									</timepicker>
+									<input type="hidden" name="time" value="{{mytime | date:'shortTime'}}" />
+									<hr>
+									<a class="btn btn-sm btn-info" data-ng-click="toggleMode()">12H / 24H</a>
+									<a class="btn btn-sm btn-info" data-ng-click="update()">Set to 12:00</a>
+									<a class="btn btn-sm btn-default" data-ng-click="clear()">Clear</a>
+									<button type="submit" class="btn btn-sm btn-success" >Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="AngularJS/angular.min.js"></script>
+	<script src="bootstrap/js/ui-bootstrap-tpls-0.12.1.js"></script>
+	<script src="js/dateTimePicker.js"></script>
+</body>
+</html>

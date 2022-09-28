@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html data-ng-app="oneAutoSuggsion">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>One Auto Suggestion</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+<style type="text/css">
+	li { cursor: pointer; }
+</style>
+</head>
+<body style="padding: 20px">
+	<section>
+	
+		<!-- This controller for only search field using 'js/oneAutoSuggsion.js' -->
+		<div class="container" data-ng-controller="oneAutoSuggsionctrl">
+			<div class="form-horizontal boundary">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<!-- PAGE HEADER -->
+						<div id="header" class="page-header">
+						    <h4><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Search Here.</h4>
+						</div>
+						<form action="#" method="post">
+							<label class="col-sm-3 control-label" for="search">Search One:</label>
+							<div class="form-group col-sm-9" style="padding-bottom: 40px">
+								<input class="form-control col-sm-2" type="text" placeholder="Enter A Country Name" 
+									data-ng-model="country" typeahead="country as country.name for country in getCountry($viewValue)" 
+									typeahead-min-length="3" />
+								<input type="hidden" name="id" value="{{country.id}}" />
+								<br><br>
+								<button type="submit" class="btn btn-info btn-sm">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- This controller for editable search field -->
+		<div class="container" data-ng-controller="editableOneAutoSuggsionctrl">
+			<div class="form-horizontal boundary">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<form action="#" method="post">
+							<label class="col-sm-3 control-label" for="search">Editable Search:</label>
+							<div class="form-group col-sm-9" style="padding-bottom: 40px">
+								<input class="form-control col-sm-2" type="text" placeholder="Enter A Country Name" 
+									data-ng-model="country" typeahead="country as country.name for country in getCountry($viewValue)" 
+									typeahead-min-length="3" />
+								<input type="hidden" name="id" value="{{country.id}}" />
+								<br><br>
+								<button type="submit" class="btn btn-info btn-sm">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+	<script src="AngularJS/angular.min.js"></script>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="bootstrap/js/ui-bootstrap-tpls-0.12.1.js"></script>
+	<script src="js/oneAutoSuggsion.js"></script>
+	
+	<!-- This controller for editable search field -->
+	<script type="text/javascript">
+	angular.module('oneAutoSuggsion').controller('editableOneAutoSuggsionctrl', function($scope, $http) {
+
+		  $scope.country = {"name": "Alabama", "id": "1"};
+			/*
+		    $scope.setCountry = function() {
+		            return $scope.country;
+		      };
+		   	$scope.setCountry();
+		   	*/
+		    $scope.getCountry = function(val) {
+		        return $http.get('json/countries.json', {
+		          params: {
+		        	country: val,
+		            sensor: false
+		          }
+		        }).then(function(response){
+		            return response.data;
+		            //return limitToFilter(response.data, 10);
+		        });
+		      };
+		});
+	</script>
+</body>
+</html>

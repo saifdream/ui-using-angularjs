@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Conditional Validation</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+
+<style type="text/css">
+	input.ng-dirty.ng-invalid {
+	  border: 1px solid red;  
+	}
+</style>
+
+</head>
+<body style="text-align: justify;">
+	<section class="container">
+		<div class="row"><br>
+		  <div data-ng-form="Form" class="col-md-6 col-md-offset-3 boundary" style="padding: 20px;">
+		    <div id="header" class="page-header">
+			    <h4><span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;Conditional validation</h4>
+			</div>
+			<div>
+				<!-- First Section -->
+		        <div class="form-group form-group-sm col-md-6">
+		        	<div class="">
+						<label class="">
+				            <input type="radio" class="form-control"
+				            	name="selection" 
+				            	data-ng-model="selection" 
+				            	data-ng-value="'first'" 
+				            	data-ng-required="'true'" />
+							First Selection
+			          	</label>
+					</div>
+		          <div disable-children="selection != 'first'" class="form-group form-group-sm">
+		            <input type="text" 
+		            	class="form-control input-sm"
+		            	data-ng-model="ekaText" 
+		            	name="ekaText" 
+		            	placeholder="Text here"
+		            	data-ng-pattern="/^[a-zA-Z]+$/" 
+		            	data-ng-required="'true'" 
+		            	data-ng-disabled="selection != 'first'" />
+		          </div>
+		        </div>
+		        
+		        <!-- Second Section -->
+		        <div class="form-group form-group-sm col-md-6">
+		        	<div>
+		        		<label>
+				            <input type="radio" class="form-control"
+				            	data-ng-model="selection" 
+				            	data-ng-value="'second'" 
+				            	name="selection" 
+				            	data-ng-required="'true'" />
+				           	Second Selection
+				        </label>
+		        	</div>
+		          <div disable-children="selection != 'second'" class="form-group form-group-sm">
+		            <input type="text" 
+		            	class="form-control input-sm"
+		            	data-ng-model="tokaText" 
+		            	name="tokaText" 
+		            	placeholder="Numbers"
+		            	data-ng-pattern="/^[0-9]+$/" 
+		            	data-ng-required="'true'" 
+		            	data-ng-disabled="selection != 'second'" />
+		          </div>
+		        </div>
+		      <h5 align="center">
+		        Valid?
+		        <span data-ng-show="Form.$valid" style="color:green">Validate!</span>
+		        <span data-ng-show="Form.$invalid" style="color:red">Not Validate!</span>
+		      </h5>
+		      
+		      <br/>
+		      <div class="form-group form-group-sm col-md-6">
+		      	<div style="padding-left: 20px;">
+		      		<label class="checkbox">
+						<input type="checkbox" data-ng-model="shouldBeRequired"/> If Ok Then Fill This:
+					</label>
+					<input data-ng-model="i1" data-ng-required="shouldBeRequired" class="form-control input-sm" placeholder="Write Here"><br/>
+					Required? {{shouldBeRequired}}<br/> {{i1}}
+		      	</div>
+		      </div>
+		      
+		      </div>
+		    </div>
+		</div>		
+	</section>
+
+	<script type="text/javascript" src="AngularJS/angular.min.js"></script>
+	<script src="js/conditionalvalidation.js"></script>
+	<script type="text/javascript" src="bootstrap/js/ui-bootstrap-tpls-0.12.1.js"></script>
+</body>
+</html>

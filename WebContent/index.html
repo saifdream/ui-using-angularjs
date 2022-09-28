@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-ng-app="scotchApp">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Route</title>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+</head>
+<body data-ng-controller="mainController">
+	
+	<!-- Header included here. -->
+	<div data-ng-include="'navbarHeader.html'"></div>
+	
+		<!-- View -->
+		<div id="main">
+			<div data-ng-view></div>
+		</div>
+  	
+  	<!-- Footer included here. -->
+  	<div data-ng-include="'footer.html'"></div>
+  	
+  	<!-- Scripts -->
+	<script src="AngularJS/angular.min.js"></script>
+	<script src="AngularJS/angular-route.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

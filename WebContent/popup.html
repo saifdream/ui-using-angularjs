@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html data-ng-app="popupApp">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>PopUp</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+<style>
+  .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body class="container">
+	<section><br>
+		<div class="row form-horizontal">
+			<div class="col-sm-8 col-sm-offset-2 boundary" data-ng-controller="ModalDemoCtrl"><br>
+				<!-- Number One -->
+				<div class="well">
+					<script type="text/ng-template" id="one.html">
+        				<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" data-ng-click="cancel()">&times;</button>
+            				<h3 class="modal-title">I'm number One!</h3>
+        				</div>
+        				<div class="modal-body">
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Number One:</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="one" type="text" data-ng-model="one"">
+								</div>
+							</div><br>
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Condition:</label>
+								<div class="checkbox">
+    								&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="checkbox"> I Agree with you.</label>
+								</div>
+							</div><br>
+        				</div>
+        				<div class="modal-footer">
+            				<button class="btn btn-sm btn-primary" data-ng-click="ok()">OK</button>
+            				<button class="btn btn-sm btn-warning" data-ng-click="cancel()">Cancel</button>
+        				</div>
+					</script>
+					<div class="form-group form-group-sm">
+				      <label class="col-sm-3 control-label">Number One:</label>
+				      <div class="col-sm-4">
+				        <input class="form-control" id="one" type="text" name="one" data-ng-model="one">
+				      </div>
+				      <div class="col-sm-3">
+				      	<button class="btn btn-sm btn-info" data-ng-click="openOne()">Number One</button>
+				      </div>
+				    </div>
+				</div>
+				
+				<!-- Number Two -->
+				<div class="well">
+					<script type="text/ng-template" id="two.html">
+        				<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" data-ng-click="cancel()">&times;</button>
+            				<h3 class="modal-title">I'm number Two!</h3>
+        				</div>
+        				<div class="modal-body">
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Number Two:</label>
+				      			<div class="col-sm-6">
+				        			<input class="form-control" id="two" type="text" data-ng-model="two">
+				      			</div>
+							</div><br>
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Comment:</label>
+				      			<div class="col-sm-6">
+				        			<textarea class="form-control" id="comment"></textarea>
+				      			</div>
+							</div><br>
+        				</div>
+        				<div class="modal-footer">
+            				<button class="btn btn-sm btn-primary" ng-click="ok()">OK</button>
+            				<button class="btn btn-sm btn-warning" ng-click="cancel()">Cancel</button>
+        				</div>
+					</script>
+					<div class="form-group form-group-sm">
+				      <label class="col-sm-3 control-label">Number Two:</label>
+				      <div class="col-sm-4">
+				        <input class="form-control" id="two" type="text" name="two" data-ng-model="two">
+				      </div>
+				      <div class="col-sm-2">
+				      	<button class="btn btn-sm btn-primary" data-ng-click="openTwo()">Number Two</button>
+				      </div>
+				    </div>
+				</div>
+				
+				<!-- Number Three -->
+				<div class="well">
+					<script type="text/ng-template" id="three.html">
+        				<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" data-ng-click="cancel()">&times;</button>
+            				<h3 class="modal-title">I'm number Three!</h3>
+        				</div>
+        				<div class="modal-body">
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Number Three:</label>
+				      			<div class="col-sm-6">
+				        			<input class="form-control" id="three" type="text" data-ng-model="three">
+				      			</div>
+							</div><br>
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Gender:</label>
+				      			<div class="col-sm-6">
+				        			<label class="radio-inline"><input type="radio" name="gender">Male</label>
+									<label class="radio-inline"><input type="radio" name="gender">Female</label>
+				      			</div>
+							</div><br>
+        				</div>
+        				<div class="modal-footer">
+            				<button class="btn btn-sm btn-primary" ng-click="ok()">OK</button>
+            				<button class="btn btn-sm btn-warning" ng-click="cancel()">Cancel</button>
+        				</div>
+					</script>
+					<div class="form-group form-group-sm">
+				      <label class="col-sm-3 control-label">Number Three:</label>
+				      <div class="col-sm-4">
+				        <input class="form-control" id="three" type="text" name="three" data-ng-model="three">
+				      </div>
+				      <div class="col-sm-2">
+				      	<button class="btn btn-sm btn-success" data-ng-click="openThree()">Number Three</button>
+				      </div>
+				    </div>
+				</div>
+				
+				<!-- Number Four -->
+				<div class="well">
+					<script type="text/ng-template" id="four.html">
+        				<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" data-ng-click="cancel()">&times;</button>
+            				<h3 class="modal-title">I'm number Four!</h3>
+        				</div>
+        				<div class="modal-body">
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Number Four:</label>
+				      			<div class="col-sm-6">
+				        			<input class="form-control" id="four" type="text" data-ng-model="four">
+				      			</div>
+							</div><br>
+							<div class="form-group form-group-sm">
+								<label class="col-sm-3 control-label">Select One:</label>
+				      			<div class="col-sm-6">
+				        			<select class="form-control" id="sel1">
+										<option> - Select One - </option>
+    									<option> Software Engineer </option>
+    									<option> Programmer </option>
+    									<option> Graphics Designer </option>
+    									<option> System Designer </option>
+  									</select>
+				      			</div>
+							</div><br>
+        				</div>
+        				<div class="modal-footer">
+            				<button class="btn btn-sm btn-primary" ng-click="ok()">OK</button>
+            				<button class="btn btn-sm btn-warning" ng-click="cancel()">Cancel</button>
+        				</div>
+					</script>
+					<div class="form-group form-group-sm">
+				      <label class="col-sm-3 control-label">Number Four:</label>
+				      <div class="col-sm-4">
+				        <input class="form-control" id="four" type="text" name="four" data-ng-model="four">
+				      </div>
+				      <div class="col-sm-2">
+				      	<button class="btn btn-sm btn-default" data-ng-click="openFour()">Number Four</button>
+				      </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<script src="AngularJS/angular.min.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/ui-bootstrap-tpls-0.12.1.js"></script>
+<script src="js/popup.js"></script>
+
+</body>
+</html>

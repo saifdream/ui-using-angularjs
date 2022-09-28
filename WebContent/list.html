@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="list">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Lists</title>
+        
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="css/web.css" />
+
+    </head>
+    <body data-ng-controller="listController">
+        <section>
+        
+          <div class="container" id="container"><br>
+            <div class="form-horizontal boundary">
+              <div class="typesDemo row">
+              	<form action = "getList.html" method="post" id="getList" name="getList">
+	                <br>
+	                <div class="col-md-10 col-md-offset-1" style="padding-bottom: 10px">
+	                <!-- PAGE HEADER -->
+					<div id="header" class="page-header">
+					    <h4><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;User List</h4>
+					</div>
+	                	<div class="table-responsive">
+	                		<div style="padding-bottom: 5px">
+	                			<button type="submit" class="btn btn-sm btn-primary">
+	                				<span class="glyphicon glyphicon-filter">&nbsp;</span>Filter
+	                			</button>
+	                			<button type="reset" class="btn btn-sm btn-primary">
+	                				<span class="glyphicon glyphicon-refresh">&nbsp;</span>Clear Filter
+	                			</button>
+	                		</div>
+	                		
+				            <table class="table table-bordered table-condensed tablestyle" id="example">
+				            	<colgroup>
+								    <col><col><col class="selectedcolumn"><col><col>
+								</colgroup>
+					            <thead>
+					            	<tr class="active">
+		                				<th>
+		                					<input type="search" class="form-control input-sm" name="fname" data-ng-model="fname" placeholder="Search" />
+		                				</th>
+		                				<th>
+		                					<input type="search" class="form-control input-sm" name="lname" data-ng-model="lname" placeholder="Search" />
+		                				</th>
+		                				<th>
+		                					<input type="search" class="form-control input-sm" name="email" data-ng-model="email" placeholder="Search" />
+		                				</th>
+		                				<th>
+		                					<input type="search" class="form-control input-sm" name="contact" data-ng-model="contact" placeholder="Search" />
+		                				</th>
+		                				<th>
+		                					<input type="search" class="form-control input-sm" name="role" data-ng-model="role" placeholder="Search" />
+		                				</th>
+	                				</tr>
+						            <tr>
+							            <th class="sorting" data-ng-click="setColumnValue('First Name')">
+							            	First Name <input type="hidden" name="columnName" data-ng-value="columnName" data-ng-model="columnName" />
+							            </th>
+							            <th class="sorting" data-ng-click="setColumnValue('Last Name')" >Last Name</th>
+							            <th class="sorting_desc" data-ng-click="setColumnValue('E-mail')" >E-mail</th>
+							            <th class="sorting_asc" data-ng-click="setColumnValue('Contact')" >Contact</th>
+							            <th class="sorting" data-ng-click="setColumnValue('Role')" >Role</th>
+						            </tr>
+					            </thead>
+					            <tbody>
+						            <tr>
+						            	<td>Md Saiful</td>
+						            	<td>Islam</td>
+						            	<td>saif99.2012@gmail.com</td>
+						            	<td>01612205942</td>
+						            	<td>Admin</td>
+						            </tr>
+						            <tr>
+						            	<td>Md Saiful</td>
+						            	<td>Islam</td>
+						            	<td>saif89.2012@gmail.com</td>
+						            	<td>01512205942</td>
+						            	<td>Manager</td>
+						            </tr>
+						            <tr>
+						            	<td>Md Saiful</td>
+						            	<td>Islam</td>
+						            	<td>saif79.2012@gmail.com</td>
+						            	<td>01812205942</td>
+						            	<td>Accountant</td>
+						            </tr>
+						            <tr>
+						            	<td>Md Saiful</td>
+						            	<td>Islam</td>
+						            	<td>saif69.2012@gmail.com</td>
+						            	<td>01712205942</td>
+						            	<td>Executive</td>
+						            </tr>
+						            <tr>
+						            	<td>Md Saiful</td>
+						            	<td>Islam</td>
+						            	<td>saif59.2012@gmail.com</td>
+						            	<td>01912205942</td>
+						            	<td>Officer</td>
+						            </tr>
+					            </tbody>
+				            </table>
+				        </div>
+	                </div>
+	                
+	                <div class="form-horizontal">
+	                	<div class="col-md-10 col-md-offset-1">
+					        
+					        <div class="col-md-4" style="padding-top: 15px; text-align: left">
+						        <div class="form-inline" role="group" style="padding-bottom: 10px">
+									Showing entries :
+										<div class="input-group">
+							               <select class="form-control input-sm" name="entriPerPage" data-ng-model="entriPerPage" data-ng-value="entriPerPage" >
+							                   <option value='5'>5</option>
+								               <option selected="selected" value='10'>10</option>
+								               <option value='15'>15</option>
+								               <option value='20'>20</option>
+							               </select>
+							               <div class="input-group-btn">
+							                  <button type="submit" class="btn btn-sm btn-primary" 
+							                     tabindex="-1">Go!
+							                  </button>
+							               </div><!-- /btn-group -->
+							            </div><!-- /input-group -->
+								</div>
+					        </div>
+					        
+					        <div class="col-md-4" style="padding-top: 20px; padding-bottom: 50px; text-align: left">
+					        	Showing Page: {{ currentPage }} Out of {{ currentTotalPage }}, from
+					        	<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					        	Total Pages: {{ totalPage }}.
+					        </div>
+					        
+					        <div class="col-md-4" style="text-align: left">
+					        
+					        	<!-- Getting Page -->
+			                	<input type="hidden" name="pageNumber" data-ng-model="pageNumber" data-ng-value="pageNumber" />
+			                	
+								<ul class="pagination pagination-sm">
+								   <li><a class="btn disabled" data-ng-click="setPageValue('first')">&laquo;</a></li>
+								   <li><a class="btn disabled" data-ng-click="setPageValue('prev')">&lsaquo;</a></li>
+								   <li class="active"><a class="btn">1</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('2')">2</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('3')">3</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('4')">4</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('5')">5</a></li>
+								   <li><a class="btn">..</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('next')">&rsaquo;</a></li>
+								   <li><a class="btn" data-ng-click="setPageValue('last')">&raquo;</a></li>
+								</ul>
+					        </div>
+					    </div>
+	                </div>
+			    </form>
+              </div>
+            </div>
+          </div>
+	      <script src="AngularJS/angular.min.js"></script>
+	      <script src="js/jquery-1.11.2.min.js"></script>
+          <script src="js/list.js"></script>
+        </section>
+    </body>
+</html>

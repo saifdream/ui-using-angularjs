@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Custom Nav Bar</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/web.css" />
+<link rel="stylesheet" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+</head>
+<body>
+	<section class="container">
+		<div class="form-horizontal boundary" style="padding-bottom: 80px;">
+			<div class="row" id="menu">
+				<div class="col-md-10 col-md-offset-1">
+				
+					<!-- Navigation Header -->
+					<nav class="navbar navbar-inverse navbar-fixed-top custom" role="navigation" id="nav">
+						<div>
+							<ul id="gn-menu" class="gn-menu-main">
+								<li class="gn-trigger">
+									<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+									<nav class="gn-menu-wrapper">
+										<div class="gn-scroller">
+											<ul class="gn-menu">
+												<li class="gn-search-item">
+													<input placeholder="Search" type="search" class="gn-search">
+													<a class="gn-icon gn-icon-search"><span>Search</span></a>
+												</li>
+												<li>
+													<a class="gn-icon gn-icon-download">Downloads</a>
+													<ul class="gn-submenu">
+														<li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
+														<li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
+													</ul>
+												</li>
+												<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+												<li><a class="gn-icon gn-icon-help">Help</a></li>
+												<li>
+													<a class="gn-icon gn-icon-archive">Archives</a>
+													<ul class="gn-submenu">
+														<li><a class="gn-icon gn-icon-article">Articles</a></li>
+														<li><a class="gn-icon gn-icon-pictures">Images</a></li>
+														<li><a class="gn-icon gn-icon-videos">Videos</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div><!-- /gn-scroller -->
+									</nav>
+								</li>
+							</ul>
+						</div>
+						<div class="container">
+						  <div class="container-fluid">
+						  	<!-- Mobile Navigation Header -->
+						    <div class="navbar-header">
+						    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+						    	   data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						           <span class="sr-only">Onus navigation</span>
+						           <span class="icon-bar"></span>
+						           <span class="icon-bar"></span>
+						           <span class="icon-bar"></span>
+						        </button>
+						    	<a class="navbar-brand active" href="#" style="color: white">Onus IT Solution</a>
+						    </div>
+						    
+						    <!-- Navigation Menu -->
+						    <div class="container">
+							    <div id="navbar" class="navbar-collapse collapse">
+							      <ul class="nav navbar-nav" style="color: white">
+							        <li><a href="#"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
+							        <li><a href="#">Product</a></li>
+							        
+							        <!-- Sub-sub Menu Navigation -->
+							        <li class="dropdown">
+							            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+							                Contact <span class="caret"></span>
+							            </a>
+							    		<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+							              <li><a href="#">Head Office</a></li>
+							              <li><a href="#">Local Branch</a></li>
+							              <li class="divider"></li>
+							              <li class="dropdown-submenu">
+							                <a tabindex="-1" href="#">Another Branch</a>
+							                <ul class="dropdown-menu">
+							                  <li><a tabindex="-1" href="#">Khulna</a></li>
+							                  <li class="dropdown-submenu">
+							                    <a href="#">Chittagong</a>
+							                    <ul class="dropdown-menu">
+							                        <li><a href="#">GEC</a></li>
+							                    	<li><a href="#">Agrabad</a></li>
+							                    	<li><a href="#">Nasirabad</a></li>
+							                    	<li><a href="#">Colonel Hat</a></li>
+							                    	<li><a href="#">GC</a></li>
+							                    </ul>
+							                  </li>
+							                  <li><a href="#">Dhaka</a></li>
+							                  <li><a href="#">Rajshahi</a></li>
+							                </ul>
+							              </li>
+							            </ul>
+							        </li>
+							        <li><a href="#">About Us</a></li>
+							        <li>
+							        	<form role="search" class="navbar-form navbar-left">
+							              <div class="">
+							                  <input type="text" class="form-control input-md" placeholder="Search" class="form-control">
+							              </div>
+							          	</form>
+							        </li>
+							      </ul>
+							      <ul class="nav navbar-nav navbar-right">
+							        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							      </ul>
+							    </div>
+						    </div>
+						  </div>
+						</div>
+					</nav>
+					<div class="jumbotron" style="text-align: center; padding-top: 100px;
+						background: url('images/Web-PageBackground.jpg') no-repeat center center fixed;">
+					   <h2>ONUS IT SOLUTION</h2>      
+					   <p>Onus IT Solution is a web application development company.</p>
+					</div>
+					<div class="container-fluid">
+				      <div class="row">
+				        <div class="col-sm-4">
+				            <h2>AngularJS</h2>
+				            <p>HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
+				            <p><a href="#" target="_blank" class="btn btn-sm btn-info">Learn More &raquo;</a></p>
+				        </div>
+				        <div class="col-sm-4">
+				            <h2>Play Framwork</h2>
+				            <p>CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
+				            <p><a href="#" target="_blank" class="btn btn-sm btn-info">Learn More &raquo;</a></p>
+				        </div>
+				        <div class="col-sm-4">
+				            <h2>Standard Java</h2>
+				            <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can create web your own website.</p>
+				            <p><a href="#" target="_blank" class="btn btn-sm btn-info">Learn More &raquo;</a></p>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	  <ul class="nav pull-right scroll-top">
+		<li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	  </ul>
+	</section>
+	
+	<footer class="footer navbar-fixed-bottom" id="footer" style="">
+      <div id="footer">
+		  <div class="container">
+		    <p class="text-muted" style="padding: 15px; text-align: center">All right belogns to &copy; Onus IT Solution 2015</p>
+		  </div>
+	  </div>
+    </footer>
+	
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/gnmenu.js"></script>
+	<script type="text/javascript">
+		new gnMenu( document.getElementById( 'gn-menu' ) );
+	</script>
+</body>
+</html>
